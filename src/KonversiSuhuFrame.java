@@ -38,7 +38,23 @@ public class KonversiSuhuFrame extends javax.swing.JFrame {
             }
         });
         
-       
+       // Menambahkan DocumentListener untuk mendeteksi perubahan input
+    textFieldInput.getDocument().addDocumentListener(new DocumentListener() {
+        @Override
+        public void insertUpdate(DocumentEvent e) {
+            updateConversion();
+        }
+
+        @Override
+        public void removeUpdate(DocumentEvent e) {
+            updateConversion();
+        }
+
+        @Override
+        public void changedUpdate(DocumentEvent e) {
+            updateConversion();
+        }
+    });
                 
         
     }
